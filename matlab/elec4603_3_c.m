@@ -26,7 +26,6 @@ delta_n_2 = base_coeff*(exp(exponent_coeff * (-V_BE))-1);
 delta_n_3 = base_coeff*(exp(exponent_coeff * (V_BC))-1);
 
 denom   = sinh(W_B/L_n);
-n_p = zeros(1, size(x,2));    % Minority carrier concentration (including n_p0)
 n_p = n_p0 + delta_n_2 * (sinh((W_B - x)/L_n)/denom) + delta_n_3 * (sinh(x/L_n)/denom);
 
 
