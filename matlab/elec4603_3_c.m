@@ -32,10 +32,18 @@ n_p = n_p0 + delta_n_2 * (sinh((W_B - x)/L_n)/denom) + delta_n_3 * (sinh(x/L_n)/
 
 %% Plot results
 figure(1);
-semilogy(all_x*1e3, delta_n, 'b-');
-line([0 n_p0], [W_B n_p0], 'LineStyle', '-.', 'Color', 'r');
-title('Minority carrier concentration in base of npn transistor');
-xlabel('Distance from base-emitter junction (\mum)');
-ylabel('Carrier concentration (cm^{-2})');
-xlim([-1e-3, W_B*1e3]);
+semilogy(x*1e3, n_p, 'b-');
+set(gca, 'FontSize', 18);
+line([min(x)*1e3 max(x)*1e3], [n_p0 n_p0], 'LineStyle', '-.', 'Color', 'r');
+title('Minority carrier concentration in base of npn transistor', ...
+    'FontSize', 28);
+xlabel('Distance from base-emitter junction (\mum)', 'FontSize', 28);
+ylabel('Carrier concentration (cm^{-2})', 'FontSize', 28);
+leg = legend('Minority carrier concentration', 'n_{p0}');
+set(leg, 'FontSize', 18);
+
+ylim_curr = get(gca,'ylim');
+% set(gca, 'ylim', [1 ylim_curr(2)]);
+xlim([min(x), max(x)]*1e3);
+ylim([min(1, ylim_curr(1)), ylim_curr(2)]);
 % plot(delta_n)
