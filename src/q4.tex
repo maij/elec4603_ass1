@@ -3,15 +3,15 @@
 %	\centering
 	\flushright
 	\includegraphics[trim={4cm 15cm 2.9cm 5cm},clip]{./img/4a}
-	\caption{Cross-section of a MOSFET operating in saturation.}
+	\caption{Cross-section of an n-channel MOSFET operating in saturation.}
 \end{figure}
 \subsection*{b)}
 Assuming a flat-band between metal and semiconductor, the insulator is made from 1 nm thick silicon dioxide and an acceptor doping concentration of 
-$N_A = 10^{19} \textrm{ cm}^{-3} = 10^{25} \textrm{ m}^{-3}$. Further, I will assume that the interface charge $Q_i$ is equal to the surface charge $Q_s$.
+$N_A = 10^{19} \textrm{ cm}^{-3} = 10^{25} \textrm{ m}^{-3}$. Further, I will assume that the interface charge $Q_i$ is negligible.
 \[
 \begin{aligned}
 	V_T &= 2 \phi_F - \frac{Q_s}{C_i} - \frac{Q_i}{C_i} \\
-	V_T &= 2 \phi_F - \frac{2 Q_s}{C_i} \\
+	V_T &= 2 \phi_F - \frac{Q_s}{C_i} \\
 	\textrm{where}\\
 	\phi_F	&= \frac{k T}{q} \ln \left(\frac{N_A}{n_i}\right) \\
 		&= 25.9 \textrm{ mV} \cdot 20.7 \\
@@ -23,7 +23,7 @@ $N_A = 10^{19} \textrm{ cm}^{-3} = 10^{25} \textrm{ m}^{-3}$. Further, I will as
 		%
 		%
 		\therefore V_T &= 2 \cdot 0.54 \textrm{ V} -
-		 \dfrac{2 \cdot 18.8  \textrm{ mC m}^{-2}}{34.5 \textrm{ mF m}^{-2}} \\
-		 &= -19.7 \textrm{ mV}
+		 \dfrac{\cdot 18.8  \textrm{ mC m}^{-2}}{34.5 \textrm{ mF m}^{-2}} \\
+		 &= 0.53 \textrm{ V}
 \end{aligned}
 \]
