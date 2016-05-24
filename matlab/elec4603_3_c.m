@@ -28,7 +28,8 @@ delta_n_3 = base_coeff*(exp(exponent_coeff * (V_BC))-1);
 denom   = sinh(W_B/L_n);
 % Calculate the minority carrier concentration for each x.
 n_p = n_p0 + delta_n_2 * (sinh((W_B - x)/L_n)/denom) + delta_n_3 * (sinh(x/L_n)/denom);
-
+low_recomb_approx  = n_p0 + delta_n_2 * (1 - x./W_B) + delta_n_3 *x./W_B;
+high_recomb_approx = n_p0 + delta_n_2 * exp(- x./L_n) + delta_n_3 *exp((x-W_B)/L_n);
 
 %% Plot results
 figure(1);
