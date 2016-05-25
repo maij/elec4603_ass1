@@ -15,8 +15,10 @@ L_n  = sqrt(D_n*tau_n);       % Minority carrier diffusion length (cm)
 base_coeff     = n_i^2/N_A;   % Constant multiplier
 exponent_coeff = q/(k_B * T); % Constant exponent
 
+um_to_cm       = 1e-4;         % Constant scale factor to cm from um.
+
 %% Test parameters
-W_B  = 1e-3;                  % Width of base (cm)
+W_B  = 1*um_to_cm;             % Width of base (cm)
 V_BE = -0.1;                  % Voltage across base-emitter junction (V)
 V_BC = -7;                    % Voltage across base-collector junction (V)
 
@@ -33,16 +35,16 @@ high_recomb_approx = n_p0 + delta_n_2 * exp(- x./L_n) + delta_n_3 *exp((x-W_B)/L
 
 %% Plot results
 figure(1);
-semilogy(x*1e3, n_p, 'b-', 'LineWidth', 1.5);
+semilogy(x/um_to_cm, n_p, 'b-', x*1e4, low_recomb_approx, 'c-.', 'LineWidth', 1.5);
 set(gca, 'FontSize', 18);
-line([min(x)*1e3 max(x)*1e3], [n_p0 n_p0], 'LineWidth', 1.5, 'LineStyle', '-.', 'Color', 'r');
+line([min(x) max(x)]/um_to_cm, [n_p0 n_p0], 'LineWidth', 1.5, 'LineStyle', '-.', 'Color', 'r');
 title('Minority carrier concentration in base of npn transistor', ...
     'FontSize', 28);
 xlabel('Distance from base-emitter junction (\mum)', 'FontSize', 28);
 ylabel('Carrier concentration (cm^{-2})', 'FontSize', 28);
-leg = legend('Minority carrier concentration', 'n_{p0}');
+leg = legend('Minority carrier concentration', 'Low Recombination Approximation' , 'n_{p0}');
 set(leg, 'FontSize', 18);
 
 ylim_curr = get(gca,'ylim');
-xlim([min(x), max(x)]*1e3);
+xlim([min(x), max(x)]/um_to_cm);
 ylim([min(1, ylim_curr(1)), ylim_curr(2)]);
