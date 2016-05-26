@@ -20,4 +20,37 @@ For all parts of this question I have assumed $T = 300 \textrm{ K}$ and have use
 	Under forward-bias, electrons are injected into the n-doped regions, and positive charges, or holes, 
 	will be injected into the p-doped region. An electron injected into the n-doped region will feel an electric attraction due to the positive-space charge region and so will accelerate, and be swept into the p-doped region, as a drift current. Once in the p-region, it can readily recombine with a hole. Once carriers have recombined, we have reached our initial conditions, and the process will repeat. Due to the recombination current, more current will be drawn from the applied voltage source. A similar explanation can be applied to the holes injected into the p-doped region, being swept into the n-doped region. Therefore, the minority carriers define the large portion of the total diode current.
 \subsection*{c)}
+	Poisson's equation can be expressed as
+	$$-\dfrac{d^2 V}{d x^2} = \dfrac{d\hat{E}}{dx} = \frac{\rho}{\epsilon} %= \frac{q}{\epsilon}(p - n + N^{+}_D - N^{-}_A)
+	$$
 	
+	If we assume the depletion approximation, the electric field will be confined to the transition region of the pn junction. $\rho$ is the charge carrier density, and is assumed to be constant throughout the p doped region, with a value of $q N_A$, and also throughout the n doped region as $q N_D$.
+	
+	Therefore, for $x_p \le x < 0$, we can solve
+	\[
+	\begin{aligned}
+		\dfrac{d\hat{E}}{dx} &= -\frac{q N_A}{\epsilon} \\
+					\hat{E}	 &= -\frac{q N_A}{\epsilon} x + c
+	\end{aligned}
+	\]
+	Applying the depletion approximation, and asserting a continuity in electric field $\hat{E}$, we know that $\hat{E} = 0$ when $x = x_p$, noting that $x_p < 0$.
+	\[
+	\begin{aligned}
+		\therefore c &= - \dfrac{q N_A}{\epsilon}\left|x_p\right| \\
+		\therefore \hat{E}(x) &= - \dfrac{q N_A}{\epsilon}(\left|x_p\right| + x) \textrm{\hspace{0.5cm} for } x_p \le x < 0
+	\end{aligned}
+	\]
+	Similarly, for the n-doped region,
+	$$ \hat{E}(x) = \dfrac{q N_D}{\epsilon}(x -x_n) \textrm{\hspace{0.5cm} for } 0 \le x \le x_n$$
+	
+	If we integrate again, we can find the built-in potential $\psi_0$.
+	\[
+	\begin{aligned}
+		- \dfrac{d \psi_0}{dx} &= \hat{E} \\
+		\psi_0 &= - \int_{x_p}^{x_n} \hat{E} dx \\
+			   &= 
+			   \int_{x_p}^{0} \frac{q N_A}{\epsilon} (\left|x_p\right|+x) dx 
+			   - \int_{0}^{x_n} \frac{q N_D}{\epsilon} (x - x_n) dx \\
+			   &= 
+	\end{aligned}
+	\]
