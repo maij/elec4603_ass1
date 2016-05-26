@@ -42,6 +42,13 @@ For all parts of this question I have assumed $T = 300 \textrm{ K}$ and have use
 	\]
 	Similarly, for the n-doped region,
 	$$ \hat{E}(x) = \dfrac{q N_D}{\epsilon}(x -x_n) \textrm{\hspace{0.5cm} for } 0 \le x \le x_n$$
+	\begin{figure}[htbp!]
+		\centering
+		\includegraphics[width=0.8\textwidth]{./img/2c_E}
+		\caption{The electric field $\hat{E}$ across the depletion region of a PN diode.}
+		\label{fig::e_field}
+	\end{figure}	
+	A plot of this function is shown in Figure \ref{fig::e_field}.
 	
 	If we integrate again, we can find the built-in potential $\psi_0$.
 	\[
@@ -51,6 +58,16 @@ For all parts of this question I have assumed $T = 300 \textrm{ K}$ and have use
 			   &= 
 			   \int_{x_p}^{0} \frac{q N_A}{\epsilon} (\left|x_p\right|+x) dx 
 			   - \int_{0}^{x_n} \frac{q N_D}{\epsilon} (x - x_n) dx \\
-			   &= 
+			   &= \dfrac{q N_A}{2 \epsilon} x_p^2 + \dfrac{q N_D}{2 \epsilon} x_n^2 \\
+			   &= 0.973 \textrm{ V}
 	\end{aligned}
 	\]
+	
+	A plot of the built-in potential as a function of space is shown in Figure \ref{fig::built_in}.
+	
+	\begin{figure}[htbp!]
+		\centering
+		\includegraphics[width=0.8\textwidth]{./img/2c_psi}
+		\caption{The built-in voltage $\psi$ across the depletion region of a PN diode.}
+		\label{fig::built_in}
+	\end{figure}
