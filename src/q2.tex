@@ -1,6 +1,6 @@
 For all parts of this question I have assumed $T = 300 \textrm{ K}$ and have used values appropriate for silicon.
 \subsection*{a)}
-	\begin{figure}[htbp!]
+	\begin{figure}[!htbp]
 		%	\centering
 		\flushright
 		\includegraphics[trim={3.5cm 12.5cm 2.5cm 11cm},clip]{./img/2a}
@@ -18,7 +18,25 @@ For all parts of this question I have assumed $T = 300 \textrm{ K}$ and have use
 	\]
 \subsection*{b)}
 	Under forward-bias, electrons are injected into the n-doped regions, and positive charges, or holes, 
-	will be injected into the p-doped region. An electron injected into the n-doped region will feel an electric attraction due to the positive-space charge region and so will accelerate, and be swept into the p-doped region, as a drift current. Once in the p-region, it can readily recombine with a hole. Once carriers have recombined, we have reached our initial conditions, and the process will repeat. Due to the recombination current, more current will be drawn from the applied voltage source. A similar explanation can be applied to the holes injected into the p-doped region, being swept into the n-doped region. Therefore, the minority carriers define the large portion of the total diode current.
+	will be injected into the p-doped region. An electron injected into the n-doped region will feel an electric attraction due to the positive-space charge region and so will accelerate, and be swept into the p-doped region, as a diffusion current. Once in the p-region, it can recombine with a hole, depending on the average diffusion length. Once carriers have recombined, we have reached our initial conditions, and the process will repeat. Due to the recombination current, more current will be drawn from the applied voltage source. A similar explanation can be applied to the holes injected into the p-doped region, being swept into the n-doped region. Therefore, the minority carriers define the large portion of the total diode current.
+	
+	Current density, $J$, can be expressed as $J = -q D \dfrac{d C}{d x}$, where $C$ is the concentration of a particular carrier. It is clear from Figure \ref{fig::concentration} that the majority carriers do not change in concentration by a large degree, but the minority carriers in each region do. 
+	
+	\begin{figure}[!htbp]
+		\centering
+		\includegraphics[width=0.8\textwidth]{./img/2b_concentration}
+		\caption{Electron and hole concentrations across a PN junction (sourced from the lecture notes)}
+		\label{fig::concentration}
+	\end{figure}
+	
+	A plot of the current density is shown in Figure \ref{fig::current}, which portrays the minority carrier current as the main factor of current in a forward-biased diode.
+	
+	\begin{figure}
+		\centering
+		\includegraphics[width=0.8\textwidth]{./img/2b_current}
+		\caption{Minority carrier current densities across a PN junction (sourced from the lecture notes). The x' is the depth into the p-doped region, while x is the depth into the n-doped region, both extending from the edge of the depletion region. $J_n$ and $J_p$ represent the minority carrier current densities in the appropriate regions.}
+		\label{fig::current}
+	\end{figure}
 \subsection*{c)}
 	Poisson's equation can be expressed as
 	$$-\dfrac{d^2 V}{d x^2} = \dfrac{d\hat{E}}{dx} = \frac{\rho}{\epsilon} %= \frac{q}{\epsilon}(p - n + N^{+}_D - N^{-}_A)
@@ -42,7 +60,7 @@ For all parts of this question I have assumed $T = 300 \textrm{ K}$ and have use
 	\]
 	Similarly, for the n-doped region,
 	$$ \hat{E}(x) = \dfrac{q N_D}{\epsilon}(x -x_n) \textrm{\hspace{0.5cm} for } 0 \le x \le x_n$$
-	\begin{figure}[htbp!]
+	\begin{figure}[!htbp]
 		\centering
 		\includegraphics[width=0.8\textwidth]{./img/2c_E}
 		\caption{The electric field $\hat{E}$ across the depletion region of a PN diode.}
@@ -65,7 +83,7 @@ For all parts of this question I have assumed $T = 300 \textrm{ K}$ and have use
 	
 	A plot of the built-in potential as a function of space is shown in Figure \ref{fig::built_in}.
 	
-	\begin{figure}[htbp!]
+	\begin{figure}[H]
 		\centering
 		\includegraphics[width=0.8\textwidth]{./img/2c_psi}
 		\caption{The built-in voltage $\psi$ across the depletion region of a PN diode.}
