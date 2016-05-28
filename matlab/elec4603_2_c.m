@@ -23,6 +23,7 @@ x_n = W/(1+N_D/N_A);
 x_p = W - x_n;
 
 x = linspace(-x_p, x_n, 1000);
+% Calculate Psi
 Psi = [];
 for i = 1:1000
     if x(i) <= 0
@@ -31,10 +32,17 @@ for i = 1:1000
         Psi(i) = - q*N_D/eps_si*(0.5*x(i)^2 - x_n*x(i));
     end
 end
+% Calculate E
+E = [];
+for i = 1:1000
+    if x(i) <= 0
+        E(i) = - q*N_A/eps_si * (x(i) + x_p);
+    else
+        E(i) = q*N_D/eps_si*(x(i) - x_n);
+    end
+end
 
 %% Psi plotting
-% Psi = q*N_D/eps_si*(0.5*x.^2 - x_n.*x) - q*N_A/eps_si * (0.5*x.^2 + x_p.*x);
-% semilogx(x+x_p, Psi)
 figure(1);
  plot(x/100*1e6,Psi+psi_0, 'LineWidth', 3)
 % line([0 0],[0 min(Psi)], 'LineStyle', '-.', 'Color', 'k')
@@ -43,19 +51,10 @@ xlabel('Distance from pn junction (\mum)');
 ylabel('\psi (V)');
 set(gca, 'FontSize', 18)
 %% E plot
-% figure(2);
-% x = linspace(-x_p, x_n, 1000);
-% for i = 1:1000
-%     if x(i) <= 0
-%         E(i) = - q*N_A/eps_si * (x(i) + x_p);
-%     else
-%         E(i) = q*N_D/eps_si*(x(i) - x_n);
-%     end
-% end
-% plot(x/100*1e6,E, 'LineWidth', 3)
-% line([0 0],[0 min(E)], 'LineStyle', '-.', 'Color', 'k')
-% title('Electric field across depletion region of pn diode');
-% xlabel('Distance from pn junction (\mum)');
-% ylabel('E (V/m)');
-% set(gca, 'FontSize', 18)
-% % semilogx(x+x_p,E)
+figure(2);
+plot(x/100*1e6,E, 'LineWidth', 3)
+line([0 0],[0 min(E)], 'LineStyle', '-.', 'Color', 'k')
+title('Electric field across depletion region of pn diode');
+xlabel('Distance from pn junction (\mum)');
+ylabel('E (V/m)');
+set(gca, 'FontSize', 18)

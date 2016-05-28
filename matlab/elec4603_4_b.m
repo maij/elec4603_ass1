@@ -13,7 +13,7 @@ eps_0    = 8.854e-12;         % Electric permittivity of free space (F / m)
 eps_si   = 11.68*eps_0;       % Electric permittivity of silicon
 eps_sio2 = 3.9*eps_0;         % Electric permittivity of silicon dioxide
 d        = 1e-9;              % Dielectric width (m)
-%% Stuff
+%% Calculate the threshold voltage.
 phi_F = k_B*T/q*log(N_A/n_i)
 Q_s = 2*sqrt(eps_si*q*N_A*phi_F)
 Q_i = 0
